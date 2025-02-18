@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chart1.js"></script>
+  <script src="chart2.js"></script>
+</head>
+
+<body class="bg-body">
+
+  <!-- Hauptinhalt -->
+  <div class="flex flex-col md:flex-row justify-center mt-4 items-center px-4">
+    
+    <main class="flex-1 p-4 md:p-6 max-w-4xl">
+      <!-- Navigationsleiste -->
+      <div class="flex flex-col md:flex-row justify-center items-center mt-4 ">
+        <ul class="flex flex-wrap mb-4 items-center text-lg text-nav font-mono space-x-6 justify-center lg:justify-center md:justify-start w-full">
+          <li><a href="index.html" class="hover:text-black font-semibold">ESCPredict</a></li>
+          <li><a href="about.html" class="hover:text-black font-semibold">Über uns</a></li>
+          <li><a href="Odds.html" class="hover:text-black font-semibold">Quoten</a></li>
+          <li><a href="demo.html" class="hover:text-black font-semibold">Demo</a></li>
+          <li><a href="https://github.com/joris-parthier/Implementierung-Boosting-Algorithmen-ESC" class="text-orange-500 font-semibold">Github</a></li>
+        </ul>
+      </div>
+  
+      <div class="text-left">
+        <h1 class="text-base font-semibold border-l-2 border-orange-500 pl-3 mb-6 text-gray-900 font-mono">
+          M1
+        </h1>
+        <p class="text-base italic text-[#414163] font-mono mb-6">
+          Der ESCPredict M1 ist ein marktschlagender Gradient Boosting Algorithmus, der die Wahrscheinlichkeit einer ESC-Qualifikation mit 15% höherer Genauigkeit vorhersagt als Quotenmacher.
+        </p>
+
+        <div class="bg-white rounded-2xl p-4">
+          <!-- Tab-Links -->
+          <div class="flex flex-wrap space-x-4 border-b">
+            <button id="tab1" class="py-2 px-4 text-gray-700 font-mono" onclick="openTab(event, 'logLossChart')">Log Loss Chart</button>
+            <button id="tab2" class="py-2 px-4 text-gray-700 font-mono" onclick="openTab(event, 'improvementChart')">Verbesserung über die Jahre</button>
+          </div>
+
+          <!-- Tab-Inhalt -->
+          <div id="logLossChart" class="tab-content mt-4">
+            <h2 class="text-lg font-mono text-gray-700 mb-2">Log Loss Chart</h2>
+            <canvas id="logChart" class="w-full rounded-lg"></canvas>
+            <p class="italic text-gray-500 text-sm mt-1">Die Log Loss-Werte für M1, Marktvorhersage und einen zufälligen Klassifizierer von 2021 bis 2024.</p>
+          </div>
+          <div id="improvementChart" class="tab-content mt-4 hidden">
+            <h2 class="text-lg font-mono text-gray-700 mb-2">Verbesserung über die Jahre</h2>
+            <canvas id="improvmentChart" class="w-full rounded-lg"></canvas>
+            <p class="italic text-gray-500 text-sm mt-1">Verbesserung über die Jahre im Vergleich zum Marktvorhersage</p>
+          </div>
+        </div>
+
+        <script>
+          // Funktion zum Öffnen des jeweiligen Tabs
+          function openTab(event, chartId) {
+            // Alle Tab-Inhalte ausblenden
+            let contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Entfernen der aktiven Klasse von allen Buttons
+            let buttons = document.querySelectorAll('button');
+            buttons.forEach(button => button.classList.remove('border-b-2', 'border-blue-500'));
+
+            // Den gewählten Tab-Inhalt anzeigen
+            document.getElementById(chartId).classList.remove('hidden');
+
+            // Aktive Klasse zum angeklickten Button hinzufügen
+            event.currentTarget.classList.add('border-b-2', 'border-blue-500');
+          }
+
+          // Standardmäßig den ersten Tab öffnen
+          document.getElementById("tab1").click();
+        </script>
+
+        <div class="mt-6 font-mono">
+          <h2 class="font-semibold underline decoration-gray-500 hover:text-accent2 text-base mb-2">
+            Neu bei ESCPredict?
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="border border-black p-6">
+              <h2 class="text-xl font-bold mb-4">Über uns</h2>
+              <p class="text-gray-700 mb-4">Was wir tun und warum</p>
+              <a href="about.html" class="text-blue-600 hover:text-blue-800">Mehr erfahren</a>
+            </div>
+            <div class="border border-black p-6">
+              <h2 class="text-xl font-bold mb-4">Quoten</h2>
+              <p class="text-gray-700 mb-4">Ein Blick auf unsere Modellleistung und Datensätze</p>
+              <a href="research.html" class="text-blue-600 hover:text-blue-800">Mehr erfahren</a>
+            </div>
+            <div class="border border-black p-6">
+              <h2 class="text-xl font-bold mb-4">Demo</h2>
+              <p class="text-gray-700 mb-4">Würde dein Song qualifizieren? Ein Demo-Modell basierend auf M1</p>
+              <a href="demo.html" class="text-blue-600 hover:text-blue-800">Mehr erfahren</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="font-mono mt-8 text-sm text-gray-700 text-center p-4">
+    <div class="max-w-6xl mx-auto">
+      <ul class="flex flex-wrap justify-center space-x-4">
+        <li><a href="https://github.com/joris-parthier/Implementierung-Boosting-Algorithmen-ESC" class="hover:text-black font-medium">Github</a></li>
+        <li><a href="#" class="hover:text-black font-medium">Bedingungen</a></li>
+        <li class="hover:text-black font-medium">© 2025 ESCPredict</li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+
+</html>

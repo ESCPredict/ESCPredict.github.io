@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+    <div class="max-w-4xl mx-auto mt-4 p-4">
+        <div class="flex flex-col md:flex-row justify-center items-center mt-4 ">
+            <ul class="flex flex-wrap mb-4 items-center text-lg text-nav font-mono space-x-6 justify-center lg:justify-center md:justify-start w-full">
+              <li><a href="index.html" class="hover:text-black font-semibold">ESCPredict</a></li>
+              <li><a href="about.html" class="hover:text-black font-semibold">Über uns</a></li>
+              <li><a href="Odds.html" class="hover:text-black font-semibold">Quoten</a></li>
+              <li><a href="demo.html" class="hover:text-black font-semibold">Demo</a></li>
+              <li><a href="https://github.com/joris-parthier/Implementierung-Boosting-Algorithmen-ESC" class="text-orange-500 font-semibold">Github</a></li>
+            </ul>
+          </div>
+  
+  <div class="max-w-6xl mx-auto text-left">
+    <h1 class="text-base font-semibold border-l-2 border-orange-500 pl-3 mb-6 text-gray-900 font-mono">
+        Quoten
+    </h1>
+
+    <ul class="flex items-center text-orange-500 ml-4 font-mono">
+        <li>
+            <a href="#" class="tab-link text-orange-500 hover:text-white hover:bg-orange-400 font-medium" data-target="dataset-table">
+                2024 Semi-final 1
+            </a>
+        </li>
+        <span class="text-[#c7d5e9] mx-4">|</span>
+        <li>
+            <a href="#" class="tab-link text-blue-600 hover:text-white hover:bg-blue-400 font-medium" data-target="qualification-table">
+                2024 Semi-final 2
+            </a>
+        </li>
+        <span class="text-[#c7d5e9] mx-4">|</span>
+        <li>
+            <a href="https://github.com/joris-parthier/Implementierung-Boosting-Algorithmen-ESC" class=" text-black font-medium">
+         Quoten 2021-2024
+            </a>
+        </li>
+    </ul>
+
+    <hr class="border-dotted w-full border-t-2 border-black mt-6 mb-6">
+        
+        <div class="w-full overflow-x-auto ">
+            <div class="min-w-full">
+                <div id="dataset-table" class="table-content">
+                    <h3 class="font-mono mb-4"> Eurovision 2024 Semi-final 1</h3>
+                <table class="table-auto border-collapse border border-gray-300 font-mono w-full">
+                    <thead>
+                        <tr class="bg-black">
+                            <th class="border border-gray-300 text-white text-center">Year</th>
+                            <th class="border border-gray-300 p-2 text-white text-center">Country</th>
+                            <th class="border border-gray-300 p-2 text-white text-center">Qualified</th>
+                            <th class="border border-gray-300 p-2 text-white text-center">Market Prediction</th>
+                            <th class="border border-gray-300 p-2 text-white text-center">Model Prediction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Serbia</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.6579</td>
+                            <td class="border border-gray-300 p-2">0.9105</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Slovenia</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.4255</td>
+                            <td class="border border-gray-300 p-2">0.5734</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Portugal</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.7576</td>
+                            <td class="border border-gray-300 p-2">0.9050</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Moldova</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.1818</td>
+                            <td class="border border-gray-300 p-2">0.0539</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Luxembourg</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.8850</td>
+                            <td class="border border-gray-300 p-2">0.9787</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Cyprus</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.8333</td>
+                            <td class="border border-gray-300 p-2">0.9095</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Iceland</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.1111</td>
+                            <td class="border border-gray-300 p-2">0.0361</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Ireland</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9091</td>
+                            <td class="border border-gray-300 p-2">0.9547</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Finland</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9524</td>
+                            <td class="border border-gray-300 p-2">0.9730</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Azerbaijan</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.3125</td>
+                            <td class="border border-gray-300 p-2">0.3007</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Lithuania</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9804</td>
+                            <td class="border border-gray-300 p-2">0.9730</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Croatia</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9901</td>
+                            <td class="border border-gray-300 p-2">0.9730</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Ukraine</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9901</td>
+                            <td class="border border-gray-300 p-2">0.9730</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Poland</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.8197</td>
+                            <td class="border border-gray-300 p-2">0.9095</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Australia</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.5405</td>
+                            <td class="border border-gray-300 p-2">0.6718</td>
+                        </tr>
+                        
+                </table>
+            </div>
+        </div>
+        <div class="w-full overflow-x-auto ">
+            <div class="min-w-full">
+                <div id="qualification-table" class="table-content hidden">
+                    <h3 class="font-mono mb-4"> Eurovision 2024 Semi-final 2</h3>
+                <table class="table-auto border-collapse border border-gray-300 font-mono w-full">
+                    <thead>
+                        <tr class="bg-black">
+                            <th class="border border-gray-300 text-white text-center">Year</th>
+                            <th class="border border-gray-300 p-2 text-white text-center">Country</th>
+                            <th class="border border-gray-300 p-2 text-white text-center">Qualified</th>
+                            <th class="border border-gray-300 p-2 text-white text-center">Market Prediction</th>
+                            <th class="border border-gray-300 p-2 text-white text-center">Model Prediction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Albania</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.3704</td>
+                            <td class="border border-gray-300 p-2">0.1043</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">San Marino</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.3226</td>
+                            <td class="border border-gray-300 p-2">0.0724</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Estonia</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.7143</td>
+                            <td class="border border-gray-300 p-2">0.9387</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Belgium</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.8000</td>
+                            <td class="border border-gray-300 p-2">0.6234</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Malta</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.2000</td>
+                            <td class="border border-gray-300 p-2">0.0540</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Czechia</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.2500</td>
+                            <td class="border border-gray-300 p-2">0.1065</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Latvia</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.2667</td>
+                            <td class="border border-gray-300 p-2">0.3546</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Armenia</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9091</td>
+                            <td class="border border-gray-300 p-2">0.9730</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Norway</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9091</td>
+                            <td class="border border-gray-300 p-2">0.9730</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Georgia</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.8475</td>
+                            <td class="border border-gray-300 p-2">0.9095</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Israel</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9259</td>
+                            <td class="border border-gray-300 p-2">0.9730</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Greece</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9346</td>
+                            <td class="border border-gray-300 p-2">0.9730</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Netherlands</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9901</td>
+                            <td class="border border-gray-300 p-2">0.9787</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Switzerland</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.9901</td>
+                            <td class="border border-gray-300 p-2">0.9730</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Denmark</td>
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">0.4167</td>
+                            <td class="border border-gray-300 p-2">0.5734</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2024</td>
+                            <td class="border border-gray-300 p-2">Austria</td>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">0.8000</td>
+                            <td class="border border-gray-300 p-2">0.5208</td>
+                        </tr>
+                        
+                        
+                </table>
+            </div>
+        </div>
+   
+   
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tab-link");
+            const tables = document.querySelectorAll(".table-content");
+    
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    let targetId = this.getAttribute("data-target");
+    
+                    // Hide all tables
+                    tables.forEach(table => table.classList.add("hidden"));
+    
+                    // Show the selected table
+                    document.getElementById(targetId).classList.remove("hidden");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chart1.js"></script>
+  <script src="chart2.js"></script>
+</head>
+
+<body class="bg-body">
+
+
+
+  <!-- Main Content -->
+  <div class="flex flex-col md:flex-row justify-center mt-4 items-center px-4">
+    
+    <main class="flex-1 p-4 md:p-6 max-w-4xl">
+     <!-- Navigation Bar -->
+     <div class="flex flex-col md:flex-row justify-center items-center mt-4 ">
+      <ul class="flex flex-wrap mb-4 items-center text-lg text-nav font-mono space-x-6 justify-center lg:justify-center md:justify-start w-full">
+        <li><a href="index.html" class="hover:text-black font-semibold">ESCPredict</a></li>
+        <li><a href="about.html" class="hover:text-black font-semibold">Über uns</a></li>
+        <li><a href="Odds.html" class="hover:text-black font-semibold">Quoten</a></li>
+        <li><a href="demo.html" class="hover:text-black font-semibold">Demo</a></li>
+        <li><a href="https://github.com/joris-parthier/Implementierung-Boosting-Algorithmen-ESC" class="text-orange-500 font-semibold">Github</a></li>
+      </ul>
+    </div>
+  
+    <div class="text-left">
+      <h1 class="text-base font-semibold border-l-2 border-orange-500 pl-3 mb-6 text-gray-900 font-mono">
+        Über uns
+      </h1>
+      <p class="text-base italic text-[#414163] font-mono mb-6">
+        Im Jahr 2022 erzählten uns österreichische Bekannte von ihrer Enttäuschung, dass ihr Teilnehmer die Qualifikation nicht geschafft hatte. Dies nahmen wir zum Anlass, uns grundsätzlich Gedanken über die Wahrscheinlichkeit der Qualifikationsrunden zu machen.
+        <br><br>
+        Im Verlauf unseres Praktikums am Institut für Statistik an der Leibniz-Universität wurden uns verschiedene Methoden und Techniken zur Vorhersage von Klassen vorgestellt. Besonders hervorzuheben sind dabei Gradient Boosted Trees, die sich durch ihre Flexibilität in Problemstellungen, die Möglichkeit der Analyse nichtlinearer Zusammenhänge sowie ihre beeindruckende Vorhersagekraft im Vergleich zu herkömmlichen Methoden auszeichnen.
+        <br><br>
+        Mit diesem Wissen und der Frage nach der Bestimmung der Qualifikationswahrscheinlichkeit des ESC im Hinterkopf, beschlossen wir, eine umfassende Analyse möglicher Erfolgsfaktoren durchzuführen, die wir auf Grundlage der Literatur und eigener Ideen bestimmten.
+        Für eine detaillierte Ausführung siehe unsere <a href="description_2025-01-15_23-14-16.pdf" class="text-blue-600 hover:underline font-semibold">schriftliche Arbeit</a>.
+        <br><br>
+        Auf dieser Website werden die Quoten für die beiden Semifinale basierend auf unserer Analyse gezeigt.
+      </p>
+    </div>
+    
+
+  <footer class="font-mono mt-8 text-sm text-gray-700 text-center p-4">
+    <div class="max-w-6xl mx-auto">
+      <ul class="flex flex-wrap justify-center space-x-4">
+        <li><a href="description_2025-01-15_23-14-16.pdf" class="hover:text-black font-medium">Github</a></li>
+        <li><a href="#" class="hover:text-black font-medium">Bedingungen</a></li>
+        <li class="hover:text-black font-medium">© 2025 ESCPredict</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>
