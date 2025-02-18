@@ -177,53 +177,61 @@
 
 </body>
 <script>
-    document.querySelector("form").addEventListener("submit", async function (event) {
-        event.preventDefault(); // Prevent traditional form submission
+  document.querySelector("form").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Verhindert die Standard-Formularaktion
 
-        // Collecting form data
-        const runningOrder = document.getElementById("running-order").value;
-        const numParticipants = document.getElementById("participant-number").value;
-        const artistName = document.getElementById("artist-name").value;
-        const songTitle = document.getElementById("song-name").value;
-        const youtubeUrl = document.getElementById("youtube-link").value;
-        const country = document.getElementById("country").value;
-        const eloScore = document.getElementById("elo-score").value;
+    const submitButton = event.target.querySelector("button[type='submit']");
+    const resultDiv = document.getElementById('prediction-result');
+    const resultText = document.getElementById('result-text');
 
-        // Construct JSON data
-        const data = {
-            running_order: parseInt(runningOrder),
-            num_participants: parseInt(numParticipants),
-            artist_name: artistName,
-            song_title: songTitle,
-            youtube_url: youtubeUrl,
-            country: country,
-            elo_score: parseInt(eloScore),
-        };
+    // Button deaktivieren und Lade-Meldung setzen
+    submitButton.disabled = true;
+    submitButton.textContent = "Berechnung läuft...";
+    resultDiv.classList.remove('hidden');
+    resultText.textContent = "Wir berechnen gerade deine Qualifikationswahrscheinlichkeit...";
 
-        console.log("Data being sent:", data); // Log the data to verify
+    // Formulardaten sammeln
+    const data = {
+        running_order: parseInt(document.getElementById("running-order").value),
+        num_participants: parseInt(document.getElementById("participant-number").value),
+        artist_name: document.getElementById("artist-name").value,
+        song_title: document.getElementById("song-name").value,
+        youtube_url: document.getElementById("youtube-link").value,
+        country: document.getElementById("country").value,
+        elo_score: parseInt(document.getElementById("elo-score").value),
+    };
 
-        try {
-            const response = await fetch("https://e513-84-137-200-212.ngrok-free.app/predict", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            });
+    console.log("Daten werden gesendet:", data);
 
-            // Check if the response is okay
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+    try {
+        const response = await fetch("https://e513-84-137-200-212.ngrok-free.app/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-            const result = await response.json();
-            console.log("Response from server:", result); // Log the server response
-            alert("Prediction Result: " + JSON.stringify(result));
-        } catch (error) {
-            console.error("Error:", error); // Log the error in the console
-            alert("Failed to submit data. Please try again. Check the console for errors.");
+        if (!response.ok) {
+            throw new Error(`HTTP-Fehler! Status: ${response.status}`);
         }
-    });
+
+        const result = await response.json();
+        console.log("Antwort vom Server:", result);
+
+        // Ergebnis anzeigen
+        resultText.textContent = `Vorhersage: ${JSON.stringify(result)}`;
+    } catch (error) {
+        console.error("Fehler:", error);
+        resultText.textContent = "Fehler bei der Berechnung. Bitte versuche es erneut.";
+    } finally {
+        // Button nach 3 Sekunden wieder aktivieren
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = "Absenden";
+        }, 3000);
+    }
+});
 </script>
 
 </html>
