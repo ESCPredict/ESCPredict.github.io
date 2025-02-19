@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="output.css" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
 </head>
 
 <body class="bg-body">
@@ -36,15 +38,15 @@
             <!-- Teilnehmernummer -->
             <div class="mb-4">
                 <label for="participant-number" class="block text-base mb-4 font-semibold underline decoration-gray-500 text-gray-700">Teilnehmernummer</label>
-                <p class="mb-2 mt-4 text-[#737373]">Geben Sie eine Zahl zwischen 1 und 17 ein</p>
+                <p class="mb-2 mt-4 text-[#737373]">Geben Sie eine Zahl zwischen 1 und 50 ein</p>
         
-                <input type="number" id="participant-number" name="participant_number" min="1" max="17" class="mt-1 p-2 w-full border border-gray-300  focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                <input type="number" id="participant-number" name="participant_number" min="1" max="50" class="mt-1 p-2 w-full border border-gray-300  focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
             </div>
             <!-- Laufnummer -->
             <div class="mb-4">
-                <label for="running-order" class="block text-base font-semibold underline decoration-gray-500 mb-4 text-gray-700">Startreihenfolge</label>
-                <p class="mb-2 mt-4 text-[#737373]">Geben Sie eine Zahl zwischen 1 und 17 ein</p>
-                <input type="number" id="running-order" name="running_order" min="1" max="17" class="mt-1 p-2 w-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                <label for="running-order" class="block text-base font-semibold underline decoration-gray-500 mb-4 text-gray-700">Laufnummer</label>
+                <p class="mb-2 mt-4 text-[#737373]">Geben Sie eine Zahl zwischen 1 und 30 ein</p>
+                <input type="number" id="running-order" name="running_order" min="1" max="30" class="mt-1 p-2 w-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
             </div>
         
             <!-- Künstlername -->
@@ -146,10 +148,15 @@
                     Absenden
                 </button>
             </div>
+            <!-- Prediction Result Display -->
+<div id="prediction-result" class="mt-6 p-6 bg-gray-100 border border-gray-300 rounded-lg hidden">
+    <h2 class="text-lg font-semibold text-gray-800">Vorhersageergebnis</h2>
+    <p id="result-text" class="mt-2 text-gray-600">Ihre Vorhersage wird hier angezeigt.</p>
+</div>
         </form>
         
         
-       
+        <!-- JavaScript to display the ELO score value -->
         <script>
             const eloSlider = document.getElementById('elo-score');
             const eloValue = document.getElementById('elo-score-value');
@@ -173,21 +180,22 @@
   </footer>
 
 </body>
-<script>
-  document.querySelector("form").addEventListener("submit", async function (event) {
-    event.preventDefault(); 
+
+ <script>
+ document.querySelector("form").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Verhindert die Standard-Formularaktion
 
     const submitButton = event.target.querySelector("button[type='submit']");
     const resultDiv = document.getElementById('prediction-result');
     const resultText = document.getElementById('result-text');
 
-  
+    // Button deaktivieren und Lade-Meldung setzen
     submitButton.disabled = true;
     submitButton.textContent = "Berechnung läuft...";
     resultDiv.classList.remove('hidden');
     resultText.textContent = "Wir berechnen gerade deine Qualifikationswahrscheinlichkeit...";
 
-    
+    // Formulardaten sammeln
     const data = {
         running_order: parseInt(document.getElementById("running-order").value),
         num_participants: parseInt(document.getElementById("participant-number").value),
@@ -230,16 +238,8 @@
     }
 });
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const correctPassword = "pass1"; 
-    let userPassword = prompt("Bitte geben Sie das Passwort ein:");
 
-    while (userPassword !== correctPassword) {
-      alert("Falsches Passwort! Versuchen Sie es erneut.");
-      userPassword = prompt("Bitte geben Sie das Passwort ein:");
-    }
-  });
-</script>
+
 
 </html>
+
