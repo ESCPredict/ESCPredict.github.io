@@ -178,19 +178,19 @@
 </body>
 <script>
   document.querySelector("form").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Verhindert die Standard-Formularaktion
+    event.preventDefault(); 
 
     const submitButton = event.target.querySelector("button[type='submit']");
     const resultDiv = document.getElementById('prediction-result');
     const resultText = document.getElementById('result-text');
 
-    // Button deaktivieren und Lade-Meldung setzen
+  
     submitButton.disabled = true;
     submitButton.textContent = "Berechnung läuft...";
     resultDiv.classList.remove('hidden');
     resultText.textContent = "Wir berechnen gerade deine Qualifikationswahrscheinlichkeit...";
 
-    // Formulardaten sammeln
+    
     const data = {
         running_order: parseInt(document.getElementById("running-order").value),
         num_participants: parseInt(document.getElementById("participant-number").value),
@@ -235,7 +235,7 @@
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const correctPassword = "pass1"; // Change this to your desired password
+    const correctPassword = "pass1"; 
     let userPassword = prompt("Bitte geben Sie das Passwort ein:");
 
     while (userPassword !== correctPassword) {
