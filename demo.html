@@ -233,5 +233,16 @@
     }
 });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const correctPassword = "pass1"; // Change this to your desired password
+    let userPassword = prompt("Bitte geben Sie das Passwort ein:");
+
+    while (userPassword !== correctPassword) {
+      alert("Falsches Passwort! Versuchen Sie es erneut.");
+      userPassword = prompt("Bitte geben Sie das Passwort ein:");
+    }
+  });
+</script>
 
 </html>
